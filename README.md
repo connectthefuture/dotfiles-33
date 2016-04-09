@@ -2,13 +2,19 @@
 
 **tldr;** Based on the dotfiles of [Zach Holman](https://github.com/holman/dotfiles/fork) and [Nick Nisi](https://github.com/nicknisi/dotfiles).
 
+
 ### Features based on Nick Nisi's dotfiles
 
 - Git submodules, here stored in `$DOTFILES/modules`
 - [Pure prompt](https://github.com/sindresorhus/pure)
-
+- Set the `CODE_DIR` variable, pointing to the location where the code projects exist for exclusive autocompletion with the `c` command.
 
 ### Features from Zack Holman's dotfiles
+
+- Added `$DOTFILES/bin` to path.
+- Source `~/.localrc` if it exists so that additional configurations can be made that won't be kept track of in this dotfiles repo.
+
+##### Topical features
 
 - **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
   available everywhere.
@@ -32,11 +38,10 @@ Please note, changes have been made from Zack's original setup:
 
 - [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-
 ### Installation
 
 ```bash
-git clone https://github.com/nicknisi/dotfiles.git ~/.dotfiles
+git clone https://github.com/fredrikaverpil/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./script/bootstrap
 ```
