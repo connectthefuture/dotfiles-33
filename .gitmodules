@@ -1,0 +1,6 @@
+[submodule "modules/pure"]
+	path = modules/pure
+	url = https://github.com/sindresorhus/pure.git
+[submodule "modules/zsh-syntax-highlighting"]
+	path = modules/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

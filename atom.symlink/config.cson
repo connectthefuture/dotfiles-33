@@ -1,0 +1,12 @@
+"*":
+  core: {}
+  editor:
+    fontFamily: "Hack"
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "8af9e4e7-ab7d-1caf-5c60-f924fee14f38"
+  welcome:
+    showOnStartup: false

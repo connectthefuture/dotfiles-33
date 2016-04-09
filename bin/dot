@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# dot
+#
+# `dot` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+export DOTFILES=$HOME/.dotfiles
+
+# Make the shell to exit if any subcommand or pipeline returns a non-zero status
+set -e
+
+# Make sure homebrew is installed first
+$DOTFILES/homebrew/install.sh 2>&1
+
+# Update homebrew
+brew update
+
+# Find all install.sh scripts and run them iteratively
+cd "$(dirname $0)"/..
+find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
