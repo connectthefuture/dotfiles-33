@@ -1,4 +1,7 @@
-brew cask install atom
+if test ! $(which git)
+then
+    brew cask install atom
+fi
 
 # Generic
 apm install minimap
