@@ -1,4 +1,4 @@
-if test ! $(which git)
+if test ! $(which atom)
 then
     brew cask install atom
 fi
