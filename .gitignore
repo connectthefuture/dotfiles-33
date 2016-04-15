@@ -9,5 +9,9 @@ atom.symlink/themes
 
 git/gitconfig.local.symlink
 
+modules/Hack
+modules/pure
+modules/zsh-syntax-highlighting
+
 zsh/zfunctions/prompt/async
 zsh/zfunctions/prompt/prompt_pure_setup
