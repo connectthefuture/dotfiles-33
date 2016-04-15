@@ -8,16 +8,19 @@
 # Check for Homebrew
 if test ! $(which brew)
 then
-  echo "  Installing Homebrew for you."
+    echo "  Installing Homebrew for you."
 
-  # Install the correct homebrew for each OS type
-  if test "$(uname)" = "Darwin"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-  fi
+    # Install the correct homebrew for each OS type
+    if test "$(uname)" = "Darwin"
+    then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+    then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    elif test "$(expr substr $(uname -s) 1 6)" = "CYGWIN"
+    then
+        echo "Homebrew will not be installed in Windows/Babun"
+    fi
 
 fi
 

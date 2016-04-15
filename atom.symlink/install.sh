@@ -1,6 +1,8 @@
 if test ! $(which atom)
 then
-    brew cask install atom
+    if [ "$(uname -s)" == "Darwin" ]
+        brew cask install atom
+    fi
 fi
 
 # Generic
