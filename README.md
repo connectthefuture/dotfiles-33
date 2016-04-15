@@ -8,18 +8,6 @@ I'm currently using these dotfiles like this:
 
 * OS X (El Capitan) with iTerm2 and ZSH
 
-#### OS X installation
-
-Install [iTerm2](https://www.iterm2.com).
-
-    brew install zsh
-    git clone https://github.com/fredrikaverpil/dotfiles ~/.dotfiles
-    ~/.dotfiles/script/bootstrap
-
-Close and re-open the shell or run `zsh`.
-
-Set the "Regular Font" typeface in iTerm2 to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
-
 
 ### Features based on Nick Nisi's dotfiles
 
@@ -58,8 +46,14 @@ Please note, changes have been made from Zack's original setup:
 
 ### Installation
 
+On OS X, first install [iTerm2](https://www.iterm2.com).
+
 ```bash
 git clone https://github.com/fredrikaverpil/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./script/bootstrap
 ```
+
+Close and re-open the shell or run `zsh`. From then on you'll be able to reload the shell via the `reload!` alias.
+
+Set the "Regular Font" typeface in iTerm2 to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
