@@ -1,6 +1,24 @@
 # dotfiles
 
-**tldr;** Based on the dotfiles of [Zach Holman](https://github.com/holman/dotfiles/fork) and [Nick Nisi](https://github.com/nicknisi/dotfiles). I'm using these on Mac OS X and Windows/[Babun](https://github.com/babun/babun).
+**tldr;** Based on the dotfiles of [Zach Holman](https://github.com/holman/dotfiles/fork) and [Nick Nisi](https://github.com/nicknisi/dotfiles).
+
+### Compability
+
+I'm currently using these dotfiles like this:
+
+* OS X (El Capitan) with iTerm2 and ZSH
+
+#### OS X installation
+
+Install [iTerm2](https://www.iterm2.com).
+
+    brew install zsh
+    git clone https://github.com/fredrikaverpil/dotfiles ~/.dotfiles
+    ~/.dotfiles/script/bootstrap
+
+Close and re-open the shell or run `zsh`.
+
+Set the "Regular Font" typeface in iTerm2 to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
 
 
 ### Features based on Nick Nisi's dotfiles

@@ -17,9 +17,6 @@ then
     elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
     then
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-    elif test "$(expr substr $(uname -s) 1 6)" = "CYGWIN"
-    then
-        echo "Homebrew will not be installed in Windows/Babun"
     fi
 
 fi
