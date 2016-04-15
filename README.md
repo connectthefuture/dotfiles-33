@@ -1,6 +1,6 @@
 # dotfiles
 
-**tldr;** Based on the dotfiles of [Zach Holman](https://github.com/holman/dotfiles/fork) and [Nick Nisi](https://github.com/nicknisi/dotfiles).
+**tldr;** Based on the dotfiles of [Zach Holman](https://github.com/holman/dotfiles/fork) and [Nick Nisi](https://github.com/nicknisi/dotfiles). I'm using these on Mac OS X and Windows/[Babun](https://github.com/babun/babun).
 
 
 ### Features based on Nick Nisi's dotfiles
