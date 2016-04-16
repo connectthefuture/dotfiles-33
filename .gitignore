@@ -9,6 +9,7 @@ atom.symlink/storage
 atom.symlink/themes
 
 git/gitconfig.local.symlink
+git/gitconfig.symlink
 
 modules/base16-shell
 modules/Hack
