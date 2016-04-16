@@ -11,7 +11,7 @@ I'm currently using these dotfiles like this:
 
 ### Features based on Nick Nisi's dotfiles
 
-- Git submodules, here stored in `$DOTFILES/modules`.
+- Git submodules, here stored in `$DOTFILES/modules`;
 - [Pure prompt](https://github.com/sindresorhus/pure).
 - [Base16-shell](https://github.com/chriskempson/base16-shell) using the "embers" theme; use `light` and `dark` commands in shell to toggle modes.
 - Set the `CODE_DIR` variable, pointing to the location where the code projects exist for exclusive autocompletion with the `c` command.
@@ -43,7 +43,10 @@ Please note, changes have been made from Zack's original setup:
 
 ### Other features
 
-- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
+- [Hack](https://github.com/chrissimpkins/Hack) typeface.
+- [Atom](https://atom.io) and packages installation
+- [Tmux](https://tmux.github.io)
 
 ### Installation
 
