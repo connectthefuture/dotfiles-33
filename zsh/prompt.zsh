@@ -5,6 +5,7 @@
 local pure=$DOTFILES/zsh/zfunctions/prompt/prompt_pure_setup
 if [ ! -e "$pure" ]
 then
+    mkdir -p $DOTFILES/zsh/zfunctions
     ln -s $DOTFILES/modules/pure/pure.zsh $DOTFILES/zsh/zfunctions/prompt/prompt_pure_setup
 fi
 
@@ -12,6 +13,7 @@ fi
 local async=$DOTFILES/zsh/zfunctions/prompt/async
 if [ ! -e "$async" ]
 then
+    mkdir -p $DOTFILES/zsh/zfunctions
     ln -s $DOTFILES/modules/pure/async.zsh $DOTFILES/zsh/zfunctions/prompt/async
 fi
 
