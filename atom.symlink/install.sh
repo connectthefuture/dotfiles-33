@@ -1,9 +1,12 @@
-if test ! $(which atom)
+if test ! $(which brew)
 then
-    if [ "$(uname -s)" == "Darwin" ]
+    if test "$(uname)" = "Darwin"
+    then
         brew cask install atom
     fi
 fi
+
+
 
 # Generic
 apm install minimap
