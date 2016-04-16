@@ -167,6 +167,5 @@ install_git_submodules
 install_dotfiles
 install_dependencies
 
-
 echo ''
 echo '  All installed!'

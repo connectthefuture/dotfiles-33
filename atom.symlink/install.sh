@@ -1,10 +1,19 @@
-if test ! $(which brew)
+echo "Install script: atom"
+
+if test ! $(which atom)
 then
     if test "$(uname)" = "Darwin"
     then
         brew cask install atom
+    elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+    then
+        sudo dnf install dnf-plugins-core
+        sudo dnf copr enable helber/atom
+        sudo dnf update
+        sudo dnf install atom
     fi
 fi
+
 
 
 
