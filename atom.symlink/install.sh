@@ -15,24 +15,30 @@ then
 fi
 
 
-
+apm_install() {
+    # Installs if it is not already installed
+    if [[ ! -d "$HOME/.atom/packages/$1" ]]
+    then
+        apm install $1
+    fi
+}
 
 # Generic
-apm install minimap
-apm install file-icons
-apm install script
-apm install terminal-plus
-apm install linter
+apm_install minimap
+apm_install file-icons
+apm_install script
+apm_install terminal-plus
+apm_install linter
 
 # Python
-apm install linter-flake8
-apm install linter-jsonlint
-apm install pretty-json
+apm_install linter-flake8
+apm_install linter-jsonlint
+apm_install pretty-json
 
 # Saltstack
-apm install language-salt
-apm install atom-jinja2
+apm_install language-salt
+apm_install atom-jinja2
 
 # Docker
-apm install language-docker
-apm install linter-docker
+apm_install language-docker
+apm_install linter-docker

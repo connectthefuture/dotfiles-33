@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-#
-# bootstrap installs things.
 
 cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+DOTFILES=$(pwd -P)
 
 set -e
 
@@ -151,7 +149,7 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -172,10 +170,55 @@ install_dependencies() {
   fi
 }
 
+install_config() {
+    # Install ~/.config
+    info "installing ~/.config"
+    if [ ! -d $HOME/.config ]; then
+        mkdir -p $HOME/.config
+    fi
+    # configs=$( find -path "$DOTFILES/config.symlink" -maxdepth 1 )
+    for config in $DOTFILES/config/*; do
+        target=$HOME/.config/$( basename $config )
+        if [ -e $target ]; then
+            success "~${target#$HOME} already exists... Skipping."
+        else
+            success  "creating symlink for $config"
+            ln -s $config $target
+        fi
+    done
+}
+
+vim_symlinks() {
+    # As I have moved off of vim as my full time editor in favor of neovim,
+    # I feel it doesn't make sense to leave my vimrc intact in the dotfiles repo
+    # as it is not really being actively maintained. However, I would still
+    # like to configure vim, so lets symlink ~/.vimrc and ~/.vim over to their
+    # neovim equivalent.
+    info "creating vim->nvim symlinks"
+
+    # ~/.vim
+    if ! [ -e ~/.vim ]; then
+        ln -s $DOTFILES/config/nvim ~/.vim
+        success "~/.vim symlink created"
+    else
+        success "~/.vim already exists... Skipping."
+    fi
+
+    # ~/.vimrc
+    if ! [ -e ~/.vimrc ]; then
+        ln -s $DOTFILES/config/nvim/init.vim ~/.vimrc
+        success "~/.vimrc symlink created"
+    else
+        success "~/.vimrc already exists... Skipping."
+    fi
+
+}
 
 setup_gitconfig
 install_git_submodules
 install_dotfiles
+install_config
+vim_symlinks
 install_dependencies
 
 echo ''

@@ -11,10 +11,10 @@ I'm currently using these dotfiles like this:
 
 ### Features based on Nick Nisi's dotfiles
 
+- ~/.config contents symlinked to `$DOTFILES/config` (for Neovim).
 - Git submodules, here stored in `$DOTFILES/modules`;
-- [Pure prompt](https://github.com/sindresorhus/pure).
-- [Base16-shell](https://github.com/chriskempson/base16-shell) using the "embers" theme; use `light` and `dark` commands in shell to toggle modes.
-- Set the `CODE_DIR` variable, pointing to the location where the code projects exist for exclusive autocompletion with the `c` command.
+  - [Pure prompt](https://github.com/sindresorhus/pure).
+  - [Base16-shell](https://github.com/chriskempson/base16-shell) using the "embers" theme; use `light` and `dark` commands in shell to toggle modes.
 
 ### Features from Zack Holman's dotfiles
 
@@ -52,6 +52,7 @@ Please note, changes have been made from Zack's original setup:
 
 On OS X, first install [iTerm2](https://www.iterm2.com).
 
+Install the dotfiles by cloning the repository and running the `bootstrap` script:
 ```bash
 git clone https://github.com/fredrikaverpil/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles

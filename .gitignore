@@ -8,6 +8,8 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 
+config/nvim/plugged
+
 git/gitconfig.local.symlink
 git/gitconfig.symlink
 
@@ -15,7 +17,6 @@ modules/base16-shell
 modules/Hack
 modules/pure
 modules/zsh-syntax-highlighting
-
 
 zsh/zfunctions/prompt/async
 zsh/zfunctions/prompt/prompt_pure_setup

@@ -8,5 +8,7 @@
     tabLength: 4
   "exception-reporting":
     userId: "8af9e4e7-ab7d-1caf-5c60-f924fee14f38"
+  "file-icons":
+    forceShow: true
   welcome:
     showOnStartup: false
