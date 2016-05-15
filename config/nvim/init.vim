@@ -6,6 +6,8 @@ set nocompatible " not vi compatible
 set encoding=utf8
 syntax on
 set number " show line numbers
+set noerrorbells
+set visualbell
 
 " Create a vertical split using :vsp and horizontal with :sp
 set splitbelow " make the new window appear below the current window
@@ -16,9 +18,10 @@ nnoremap <C-L> <C-W><C-L> " Ctrl-l move to the split to the right
 nnoremap <C-H> <C-W><C-H> " Ctrl-h move to the split to the left
 
 " Enable folding
-" set foldmethod=indent
-" set foldlevel=99 " Automatically fold at level 99
-" nnoremap <space> za " Enable folding with the spacebar
+nnoremap <space> za " Enable folding with the spacebar
+set foldmethod=indent
+set foldnestmax=2
+set foldlevel=2 " Automatically fold at level n
 
 " Python PEP8
 " au BufNewFile,BufRead *.py set tabstop=4
@@ -40,7 +43,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'chriskempson/base16-vim' " Colorschemes
 Plug 'scrooloose/syntastic' " Syntax check
-Plug 'nvie/vim-flake8' " Python Flake 8 check
 Plug 'scrooloose/nerdtree' " File browser
 Plug 'jistr/vim-nerdtree-tabs' " Improves NERDTree
 Plug 'kien/ctrlp.vim' " Search for file
@@ -48,12 +50,11 @@ Plug 'tpope/vim-fugitive' " Git commands
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 
-" Plug 'tmhedberg/SimpylFold' " Folding
-" Plug 'vim-scripts/indentpython.vim' " Indentation according to PEP8
-" Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
 
-" Add plugins to &runtimepath
-call plug#end()
+Plug 'nvie/vim-flake8', { 'for': 'python' } " Python Flake 8 check
+Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
+
+call plug#end() " Add plugins to &runtimepath
 
 " ---------------------------------- "
 " Syntastic
