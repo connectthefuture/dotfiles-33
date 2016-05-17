@@ -105,5 +105,6 @@ if zsh_theme != ""
   execute "set background=".$BACKGROUND
   execute "colorscheme ".$THEME
 endif
-  highlight Comment cterm=italic
+
+highlight Comment cterm=italic
 highlight htmlArg cterm=italic
