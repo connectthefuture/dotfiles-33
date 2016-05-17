@@ -5,8 +5,8 @@ then
     if test "$(uname)" = "Darwin"
     then
         brew install git
-    elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+    elif test $(which apt-get)
     then
-        sudo dnf install git
+        sudo apt-get install git
     fi
 fi

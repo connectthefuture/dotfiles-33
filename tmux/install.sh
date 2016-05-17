@@ -5,8 +5,8 @@ then
     if test "$(uname)" = "Darwin"
     then
         brew install tmux
-    elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+    elif test $(which apt-get)
     then
-        sudo dnf install tmux
+        sudo apt-get install tmux
     fi
 fi

@@ -5,15 +5,12 @@ then
     if test "$(uname)" = "Darwin"
     then
         brew install neovim/neovim/neovim
-    elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-    then
-        # Fedora
-        sudo dnf -y install dnf-plugins-core
-        sudo dnf -y copr enable dperson/neovim
-        sudo dnf -y install neovim
+    elif test $(which apt-get) then
+        # Ubuntu
+        sudo apt-get install nvim
     fi
-fi
 
-# Install
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    # Install vim-plug
+    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
