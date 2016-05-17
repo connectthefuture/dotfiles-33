@@ -56,10 +56,17 @@ On OS X, first install [iTerm2](https://www.iterm2.com).
 Install the dotfiles by cloning the repository and running the `bootstrap` script:
 ```bash
 git clone https://github.com/fredrikaverpil/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./script/bootstrap
+~/.dotfiles/script/bootstrap
 ```
 
 Close and re-open the shell or run `zsh`. From then on you'll be able to reload the shell via the `reload!` alias.
 
 Set the "Regular Font" typeface in iTerm2 to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
+
+### Developing
+
+Add a submodule:
+```bash
+git submodule add https://github.com/user/repo ~/.dotfiles/modules/repo
+git submodule update --init --recursive
+```
