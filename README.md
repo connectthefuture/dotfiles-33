@@ -4,8 +4,9 @@
 
 ### Compability
 
-I'm currently using these dotfiles like this:
+I'm currently using these dotfiles in the following configurations:
 
+* OS X (El Capitan) with Terminal.app and Bash
 * OS X (El Capitan) with iTerm2 and ZSH
 
 
