@@ -6,8 +6,8 @@
 
 I'm currently using these dotfiles in the following configurations:
 
-* OS X (El Capitan) with Terminal.app and Bash
 * OS X (El Capitan) with iTerm2 and ZSH
+* (OS X (El Capitan) with Terminal.app and Bash)
 
 
 ### Features based on Nick Nisi's dotfiles
@@ -52,7 +52,9 @@ Please note, changes have been made from Zack's original setup:
 
 ### Installation
 
-On OS X, first install [iTerm2](https://www.iterm2.com).
+On OS X, first install [iTerm2](https://www.iterm2.com) or use the Terminal.app.
+
+If you wish to use ZSH, install that first via e.g. brew: `brew install zsh`
 
 Install the dotfiles by cloning the repository and running the `bootstrap` script:
 ```bash
@@ -60,13 +62,15 @@ git clone https://github.com/fredrikaverpil/dotfiles.git ~/.dotfiles
 ~/.dotfiles/script/bootstrap
 ```
 
-Close and re-open the shell or run `zsh`. From then on you'll be able to reload the shell via the `reload!` alias.
+Close and re-open the shell or run `zsh`. From then on you'll be able to reload the shell via the `reload!` alias. Configure your terminal application to use either bash or zsh.
 
-Set the "Regular Font" typeface in iTerm2 to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
+Install theme in iTerm2 or Terminal.app as well as configure theme in ZSH and vim.
+
+Set the typeface in iTerm2 or Terminal.app to the Hack typeface which is downloaded into `~/.dotfiles/modules/Hack`.
 
 ### Developing
 
-Add a submodule:
+Add a new submodule:
 ```bash
 git submodule add https://github.com/user/repo ~/.dotfiles/modules/repo
 git submodule update --init --recursive
