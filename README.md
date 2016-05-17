@@ -38,7 +38,8 @@ I'm currently using these dotfiles like this:
 
 Please note, changes have been made from Zack's original setup:
 
-- a Brewfile is not used, in favor for `install.sh` scripts which can include `brew` commands.
+- Install scripts are called `dotinstall.sh`
+- a Brewfile is not used, in favor for `dotinstall.sh` scripts which can include `brew` commands.
 - \*.zsh files are not loaded if placed in topic sub-folder, which makes it possible to store submodules (containing \*.zfs files) within the dotfiles without resulting in errors.
 
 ### Other features
