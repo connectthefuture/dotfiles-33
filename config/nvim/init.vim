@@ -3,6 +3,7 @@
 " ---------------------------------- "
 
 set nocompatible " not vi compatible
+set backspace=2 " make backspace work like most other apps
 set encoding=utf8
 syntax on
 set number " show line numbers
@@ -98,7 +99,11 @@ let g:airline_theme='base16'
 
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-execute "set background=".$BACKGROUND
-execute "colorscheme ".$THEME
-highlight Comment cterm=italic
+
+let zsh_theme=$THEME " Fetch the $THEME variable
+if zsh_theme != ""
+  execute "set background=".$BACKGROUND
+  execute "colorscheme ".$THEME
+endif
+  highlight Comment cterm=italic
 highlight htmlArg cterm=italic
