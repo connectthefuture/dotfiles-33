@@ -50,7 +50,7 @@ Plug 'kien/ctrlp.vim' " Search for file
 Plug 'tpope/vim-fugitive' " Git commands
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
-
+Plug 'severin-lemaignan/vim-minimap' " minimap
 
 Plug 'nvie/vim-flake8', { 'for': 'python' } " Python Flake 8 check
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
