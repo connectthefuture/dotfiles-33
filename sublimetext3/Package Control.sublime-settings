@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
+		"FileDiffs",
+		"Fold Python",
+		"GitGutter",
+		"GitSavvy",
+		"Jedi - Python autocompletion",
+		"Markdown Preview",
+		"Material Theme",
+		"Material Theme - Appbar",
+		"Package Control",
+		"Pretty JSON",
+		"requirementstxt",
+		"SaltStack-related syntax highlighting and snippets",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeLinter-json",
+		"Sublimerge Pro",
+		"Terminal"
+	]
+}

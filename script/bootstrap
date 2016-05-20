@@ -214,11 +214,32 @@ vim_symlinks() {
 
 }
 
+sublime_symlinks() {
+    # Install Sublime Text 3 symlinks
+    info "creating sublime text 3 symlinks"
+    SUBLIME="$HOME/Library/Application Support/Sublime Text 3"
+    if [ ! -d "$SUBLIME/Packages/User" ]; then
+        mkdir -p "$SUBLIME/Packages/User"
+    fi
+
+    for file in $DOTFILES/sublimetext3/*; do
+        target="$SUBLIME"/Packages/User/$( basename "$file" )
+        if [ -e "$target" ]; then
+            success "~${target#$HOME} already exists... Skipping."
+        else
+            success  "creating symlink for $file"
+            ln -s "$file" "$target"
+        fi
+    done
+}
+
+
 setup_gitconfig
 install_git_submodules
 install_dotfiles
 install_config
 vim_symlinks
+sublime_symlinks
 install_dependencies
 
 echo ''

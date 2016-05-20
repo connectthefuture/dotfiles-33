@@ -1,0 +1,11 @@
+{
+  "auto_indent": true,
+  "rulers": [
+    72,
+    79
+  ],
+  "smart_indent": true,
+  "tab_size": 4,
+  "translate_tabs_to_spaces": true,
+  "use_tab_stops": true
+}
