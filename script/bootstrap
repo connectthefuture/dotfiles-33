@@ -222,7 +222,7 @@ sublime_symlinks() {
         mkdir -p "$SUBLIME/Packages/User"
     fi
 
-    for file in $DOTFILES/sublimetext3/*; do
+    for file in $DOTFILES/sublimetext3/*settings; do
         target="$SUBLIME"/Packages/User/$( basename "$file" )
         if [ -e "$target" ]; then
             success "~${target#$HOME} already exists... Skipping."
