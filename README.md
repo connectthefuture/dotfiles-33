@@ -45,10 +45,10 @@ Please note, changes have been made from Zack's original setup:
 
 ### Other features
 
-- [Atom](https://atom.io) and packages installation
-- [Hack](https://github.com/chrissimpkins/Hack) typeface.
-- [Sublime Text 3](https://www.sublimetext.com)
-- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
+- [Atom](https://atom.io) with packages and config
+- [Hack](https://github.com/chrissimpkins/Hack) typeface
+- [Sublime Text 3](https://www.sublimetext.com) with packages and config
+- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) in ZSH
 - [Tmux](https://tmux.github.io)
 
 ### Installation
