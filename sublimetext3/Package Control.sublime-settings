@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"AutoDocstring",
 		"BracketHighlighter",
 		"Dockerfile Syntax Highlighting",
 		"FileDiffs",
