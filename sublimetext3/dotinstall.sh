@@ -6,7 +6,7 @@ then
     then
         brew install caskroom/cask/brew-cask
         brew tap caskroom/versions
-        brew cask install sublime-text3
+        brew cask install sublime-text
 
 	# SUBLIME="$HOME/Library/Application Support/Sublime Text 3"
 	# if ! [ -d "$SUBLIME/Installed Packages" ]
