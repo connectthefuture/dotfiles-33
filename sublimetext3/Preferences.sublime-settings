@@ -7,8 +7,8 @@
 	"font_size": 12,
 	"ignored_packages":
 	[
-		"Vintage",
-		"RestructuredText"
+		"RestructuredText",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
