@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")/.."
 DOTFILES=$(pwd -P)
 
 set -e
@@ -26,14 +25,12 @@ fail () {
 }
 
 setup_gitconfig () {
-
-
   if [ "$(uname -s)" == "Darwin" ]
   then
     GITFILE=gitconfig.symlink
   fi
 
-  if ! [ -f git/gitconfig.symlink ]
+  if ! [ -f "$DOTFILES"/apps/git/gitconfig.symlink ]
   then
     info 'setup gitconfig'
 
@@ -48,7 +45,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/$GITFILE.example > git/$GITFILE
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES"/git/$GITFILE.example > "$DOTFILES"/git/$GITFILE
 
     success 'gitconfig'
   fi
@@ -145,7 +142,7 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES"/apps -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -156,8 +153,8 @@ install_dependencies() {
   # If we're on a Mac, let's install and setup homebrew.
   if [ "$(uname -s)" == "Darwin" ]
   then
-    info "installing dependencies (see /tmp/dotfiles-dot)"
-    if source bin/dot > /tmp/dotfiles-dot 2>&1
+    info "installing dependencies (see /.dotfiles/dotfiles.log)"
+    if source scripts/dot > "$DOTFILES"/dotfiles.log 2>&1
     then
       success "dependencies installed"
     else
@@ -169,18 +166,16 @@ install_dependencies() {
 install_config() {
     # Install ~/.config
     info "installing ~/.config"
+
+    local overwrite_all=false backup_all=false skip_all=false
+
     if [ ! -d $HOME/.config ]; then
         mkdir -p $HOME/.config
     fi
     # configs=$( find -path "$DOTFILES/config.symlink" -maxdepth 1 )
-    for config in $DOTFILES/config/*; do
+    for config in $DOTFILES/apps/config/*; do
         target=$HOME/.config/$( basename $config )
-        if [ -e $target ]; then
-            success "~${target#$HOME} already exists... Skipping."
-        else
-            success  "creating symlink for $config"
-            ln -s $config $target
-        fi
+        link_file "$config" "$target"
     done
 }
 
@@ -192,9 +187,11 @@ vim_symlinks() {
     # neovim equivalent.
     info "creating vim->nvim symlinks"
 
+    local overwrite_all=false backup_all=false skip_all=false
+
     # ~/.vim
     if ! [ -e ~/.vim ]; then
-        ln -s $DOTFILES/config/nvim ~/.vim
+        ln -s $DOTFILES/apps/config/nvim ~/.vim
         success "~/.vim symlink created"
     else
         success "~/.vim already exists... Skipping."
@@ -202,7 +199,7 @@ vim_symlinks() {
 
     # ~/.vimrc
     if ! [ -e ~/.vimrc ]; then
-        ln -s $DOTFILES/config/nvim/init.vim ~/.vimrc
+        ln -s $DOTFILES/apps/config/nvim/init.vim ~/.vimrc
         success "~/.vimrc symlink created"
     else
         success "~/.vimrc already exists... Skipping."
@@ -213,19 +210,17 @@ vim_symlinks() {
 sublime_symlinks() {
     # Install Sublime Text 3 symlinks
     info "creating sublime text 3 symlinks"
+    
+    local overwrite_all=false backup_all=false skip_all=false
+
     SUBLIME="$HOME/Library/Application Support/Sublime Text 3"
     if [ ! -d "$SUBLIME/Packages/User" ]; then
         mkdir -p "$SUBLIME/Packages/User"
     fi
 
-    for file in $DOTFILES/sublimetext3/*settings; do
+    for file in $DOTFILES/apps/sublimetext3/*settings; do
         target="$SUBLIME"/Packages/User/$( basename "$file" )
-        if [ -e "$target" ]; then
-            success "~${target#$HOME} already exists... Skipping."
-        else
-            success  "creating symlink for $file"
-            ln -s "$file" "$target"
-        fi
+        link_file "$file" "$target"
     done
 }
 
@@ -234,7 +229,7 @@ setup_gitconfig
 install_git_submodules
 install_dotfiles
 install_config
-vim_symlinks
+# vim_symlinks - separate vim and neovim
 sublime_symlinks
 install_dependencies
 

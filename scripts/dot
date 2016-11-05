@@ -13,11 +13,11 @@ set -e
 if test "$(uname)" = "Darwin"
 then
     # Install homebrew
-    $DOTFILES/homebrew/dotinstall.sh 2>&1
+    "$DOTFILES"/apps/homebrew/dotinstall.sh 2>&1
 
     # Update homebrew
     brew update
 fi
 
 # Find all install.sh scripts and run them iteratively
-find $DOTFILES -name dotinstall.sh | while read installer ; do sh -c "${installer}" ; done
+find "$DOTFILES"/apps -name dotinstall.sh | while read installer ; do sh -c "${installer}" ; done

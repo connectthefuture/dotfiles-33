@@ -1,0 +1,12 @@
+# Please note, .bash_profile is executed for login shells, while
+# .bashrc is executed for interactive non-login shells.
+#
+# Exception Terminal.app on OS X: for each new terminal window,
+# .bash_profile is called instead of .bashrc. 
+
+# Language settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+
+[[ -s ~/.bashrc ]] && source ~/.bashrc

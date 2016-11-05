@@ -1,22 +1,22 @@
-atom.symlink/.apm
-atom.symlink/.node-gyp
-atom.symlink/.storage
-atom.symlink/blob-store
-atom.symlink/compile-cache/
-atom.symlink/nohup.out
-atom.symlink/packages
-atom.symlink/storage
-atom.symlink/themes
+apps/atom.symlink/.apm
+apps/atom.symlink/.node-gyp
+apps/atom.symlink/.storage
+apps/atom.symlink/blob-store
+apps/atom.symlink/compile-cache/
+apps/atom.symlink/nohup.out
+apps/atom.symlink/packages
+apps/atom.symlink/storage
+apps/atom.symlink/themes
 
-config/nvim/plugged
+apps/config/nvim/plugged
 
-git/gitconfig.local.symlink
-git/gitconfig.symlink
+apps/git/gitconfig.local.symlink
+apps/git/gitconfig.symlink
 
-modules/base16-shell
-modules/Hack
-modules/pure
-modules/zsh-syntax-highlighting
+apps/modules/base16-shell
+apps/modules/Hack
+apps/modules/pure
+apps/modules/zsh-syntax-highlighting
 
-zsh/zfunctions/prompt/async
-zsh/zfunctions/prompt/prompt_pure_setup
+apps/zsh/zfunctions/prompt/async
+apps/zsh/zfunctions/prompt/prompt_pure_setup
