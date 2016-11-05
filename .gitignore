@@ -1,4 +1,4 @@
-dotfiles.log
+*.log
 
 apps/atom.symlink/.apm
 apps/atom.symlink/.node-gyp
