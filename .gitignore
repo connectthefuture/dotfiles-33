@@ -1,3 +1,5 @@
+dotfiles.log
+
 apps/atom.symlink/.apm
 apps/atom.symlink/.node-gyp
 apps/atom.symlink/.storage
