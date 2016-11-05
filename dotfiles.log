@@ -1,6 +1,0 @@
-/usr/local/Homebrew/Library/Homebrew/utils/lock.sh: line 19: /usr/local/var/homebrew/locks/update: Permission denied
--e:1:in `initialize': Bad file descriptor (Errno::EBADF)
-	from -e:1:in `new'
-	from -e:1:in `<main>'
-Error: Another active Homebrew process is already in progress.
-Please wait for it to finish or terminate it to continue.
