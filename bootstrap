@@ -153,7 +153,7 @@ install_dependencies() {
   # If we're on a Mac, let's install and setup homebrew.
   if [ "$(uname -s)" == "Darwin" ]
   then
-    info "installing dependencies (see /.dotfiles/dotfiles.log)"
+    info "installing dependencies (see dotfiles.log)"
     if source scripts/dotinstaller > "$DOTFILES"/dotfiles.log 2>&1
     then
       success "dependencies installed"
@@ -229,7 +229,7 @@ setup_gitconfig
 install_git_submodules
 install_dotfiles
 install_config
-# vim_symlinks  # commented out to separate vim and neovim
+vim_symlinks
 sublime_symlinks
 install_dependencies
 

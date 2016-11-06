@@ -4,6 +4,9 @@ export DOTFILES=$HOME/.dotfiles/
 # adding path directory for custom scripts
 export PATH=$DOTFILES/scripts:$PATH
 
+# aliases
+alias ll="ls -alhG"
+
 parse_git_branch() {
   # Get the Git branch
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
