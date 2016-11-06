@@ -46,7 +46,7 @@ Plug 'chriskempson/base16-vim' " Colorschemes
 Plug 'scrooloose/syntastic' " Syntax check
 Plug 'scrooloose/nerdtree' " File browser
 Plug 'jistr/vim-nerdtree-tabs' " Improves NERDTree
-Plug 'kien/ctrlp.vim' " Search for file
+Plug 'ctrlpvim/ctrlp.vim' " Search for file
 Plug 'tpope/vim-fugitive' " Git commands
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
