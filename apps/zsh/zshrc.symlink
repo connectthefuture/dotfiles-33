@@ -1,9 +1,9 @@
 # shortcuts
-export DOTFILES=$HOME/.dotfiles
-export ZSH=$DOTFILES/zsh
+export DOTFILES=$HOME/.dotfiles/
+export ZSH=$DOTFILES/apps/zsh
 
 # adding path directory for custom scripts
-export PATH=$DOTFILES/bin:$PATH
+export PATH=$DOTFILES/scripts:$PATH
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -16,7 +16,7 @@ fi
 # Find zsh files
 typeset -U config_files
 # config_files=($ZSH/**/*.zsh) # all zsh files
-config_files=($DOTFILES/*/*.zsh) # top-level zsh files
+config_files=($DOTFILES/apps/*/*.zsh) # top-level zsh files
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
