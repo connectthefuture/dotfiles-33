@@ -154,7 +154,7 @@ install_dependencies() {
   if [ "$(uname -s)" == "Darwin" ]
   then
     info "installing dependencies (see /.dotfiles/dotfiles.log)"
-    if source scripts/dot > "$DOTFILES"/dotfiles.log 2>&1
+    if source scripts/dotinstaller > "$DOTFILES"/dotfiles.log 2>&1
     then
       success "dependencies installed"
     else
