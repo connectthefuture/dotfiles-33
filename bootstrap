@@ -52,7 +52,7 @@ setup_gitconfig () {
 }
 
 install_git_submodules () {
-  # If we're on a Mac, let's install and setup homebrew.
+  # Install git submodules
   info "installing git submodules"
   if git submodule update --init --recursive
   then
