@@ -229,7 +229,7 @@ setup_gitconfig
 install_git_submodules
 install_dotfiles
 install_config
-# vim_symlinks - separate vim and neovim
+# vim_symlinks  # commented out to separate vim and neovim
 sublime_symlinks
 install_dependencies
 
