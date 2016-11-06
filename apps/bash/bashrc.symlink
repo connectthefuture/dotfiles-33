@@ -4,8 +4,12 @@ export DOTFILES=$HOME/.dotfiles/
 # adding path directory for custom scripts
 export PATH=$DOTFILES/scripts:$PATH
 
-# aliases
-alias ll="ls -alhG"
+# Find aliases bash files
+aliases_files=($DOTFILES/apps/*/aliases.sh)
+for file in ${aliases_files[@]}
+do
+  source $file
+done
 
 parse_git_branch() {
   # Get the Git branch
