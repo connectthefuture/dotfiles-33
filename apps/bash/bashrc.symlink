@@ -1,12 +1,22 @@
-# Get the Git branch
+# shortcuts
+export DOTFILES=$HOME/.dotfiles/
+
+# adding path directory for custom scripts
+export PATH=$DOTFILES/scripts:$PATH
+
 parse_git_branch() {
+  # Get the Git branch
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-# Custom bash prompt
-#
-# Includes custom character for the prompt, path, and Git branch name.
-#
-# Source: kirsle.net/wizards/ps1.html
-export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
+	# assume Bash
 
+	# Custom bash prompt
+	# Source: kirsle.net/wizards/ps1.html
+	export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+
+# elif [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+# 	# assume Zsh
+
+fi
