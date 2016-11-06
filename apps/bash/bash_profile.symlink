@@ -8,5 +8,9 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Colors
+# Taken from http://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
