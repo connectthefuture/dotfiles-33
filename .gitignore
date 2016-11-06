@@ -12,6 +12,8 @@ apps/atom.symlink/themes
 
 apps/config/nvim/plugged
 
+apps/vim.symlink/bundle
+
 apps/git/gitconfig.local.symlink
 apps/git/gitconfig.symlink
 
