@@ -37,7 +37,7 @@ set foldlevel=2 " Automatically fold at level n
 " autocmd FileType python set sts=4
 
 " ---------------------------------- "
-" Plugins
+" Plugins (via vim-plug)
 " ---------------------------------- "
 
 call plug#begin('~/.config/nvim/plugged')
