@@ -27,8 +27,10 @@ if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
     export LANG=en_US.UTF-8
 
     # Taken from http://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output
+    # Enable colors
     export CLICOLOR=1
-    export LS_COLORS=gxBxhxDxfxhxhxhxhxcxcx
+    # BSD colors
+    export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
     # Custom bash prompt
     # Source: kirsle.net/wizards/ps1.html
