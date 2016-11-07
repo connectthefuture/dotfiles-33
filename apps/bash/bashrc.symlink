@@ -11,6 +11,19 @@ do
   source $file
 done
 
+# Language settings
+set_language() {
+	export LC_ALL=en_US.UTF-8
+	export LANG=en_US.UTF-8
+}
+
+# Colors
+set_colors() {
+	# Taken from http://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output
+	export CLICOLOR=1
+	export LS_COLORS=gxBxhxDxfxhxhxhxhxcxcx
+}
+
 parse_git_branch() {
   # Get the Git branch
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -18,6 +31,9 @@ parse_git_branch() {
 
 if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# assume Bash
+
+	$(set_language)
+	$(set_colors)
 
 	# Custom bash prompt
 	# Source: kirsle.net/wizards/ps1.html
