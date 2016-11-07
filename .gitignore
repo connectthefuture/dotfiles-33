@@ -1,4 +1,5 @@
 dotfiles.log
+.DS_Store
 
 apps/atom.symlink/.apm
 apps/atom.symlink/.node-gyp

@@ -189,18 +189,16 @@ vim_symlinks() {
 
     # ~/.vim
     if ! [ -e ~/.vim ]; then
-        ln -s $DOTFILES/apps/config/nvim ~/.vim
-        success "~/.vim symlink created"
-    else
-        success "~/.vim already exists... Skipping."
+        src=$DOTFILES/apps/config/nvim
+        dst=~/.vim
+        link_file "$src" "$dst"
     fi
 
     # ~/.vimrc
     if ! [ -e ~/.vimrc ]; then
-        ln -s $DOTFILES/apps/config/nvim/init.vim ~/.vimrc
-        success "~/.vimrc symlink created"
-    else
-        success "~/.vimrc already exists... Skipping."
+        src=$DOTFILES/apps/config/nvim/init.vim
+        dst=~/.vimrc
+        link_file "$src" "$dst"
     fi
 
 }
@@ -223,9 +221,9 @@ sublime_symlinks() {
     # elif [ "$(uname -s)" == "Linux" ]; then
     #     if [ -e /mnt/c/Users ]; then
     #         info "creating sublime text 3 symlinks"
-    # 
+    
     #         local overwrite_all=false backup_all=false skip_all=false
-    # 
+    
     #         SUBLIME="/mnt/c/Users/iruser/AppData/Roaming/Sublime Text 3"
     #         if [ ! -d "$SUBLIME/Packages/User" ]; then
     #             mkdir -p "$SUBLIME/Packages/User"
@@ -234,7 +232,7 @@ sublime_symlinks() {
     #             target="$SUBLIME"/Packages/User/$( basename "$file" )
     #             link_file "$file" "$target"
     #         done
-        fi
+    #     fi
     fi
 }
 
