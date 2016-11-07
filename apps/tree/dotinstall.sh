@@ -7,6 +7,6 @@ then
         brew install tree
     elif test $(which apt-get)
     then
-        sudo apt-get install tree
+        sudo apt-get install -y tree
     fi
 fi
