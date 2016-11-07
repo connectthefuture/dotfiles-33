@@ -1,5 +1,9 @@
 # Color ouput on OS X
-alias ll="ls -alhG"
+if [ `uname` == "Darwin" ]; then
+  alias ll="ls -alhG"
+elif [ `uname` == "Linux" ]; then
+  alias ll='ls -alh --color'
+fi
 
 # SSH Keygen
 alias ssh_github="eval \"$(ssh-agent -s)\" && chmod 400 ~/.ssh/*id_rsa && ssh-add ~/.ssh/github_id_rsa"
