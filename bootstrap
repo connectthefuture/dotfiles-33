@@ -220,6 +220,21 @@ sublime_symlinks() {
             target="$SUBLIME"/Packages/User/$( basename "$file" )
             link_file "$file" "$target"
         done
+    elif [ "$(uname -s)" == "Linux" ]; then
+        if [ -e /mnt/c/Users ]; then
+            info "creating sublime text 3 symlinks"
+
+            local overwrite_all=false backup_all=false skip_all=false
+
+            SUBLIME="/mnt/c/Users/iruser/AppData/Roaming/Sublime Text 3"
+            if [ ! -d "$SUBLIME/Packages/User" ]; then
+                mkdir -p "$SUBLIME/Packages/User"
+            fi
+            for file in $DOTFILES/apps/sublimetext3/*settings; do
+                target="$SUBLIME"/Packages/User/$( basename "$file" )
+                link_file "$file" "$target"
+            done
+        fi
     fi
 }
 
