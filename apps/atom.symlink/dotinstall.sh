@@ -5,8 +5,12 @@ then
     if test "$(uname)" = "Darwin"
     then
         brew cask install atom
+    elif test $(which apt-get)
+    then
+	sudo add-apt-repository ppa:webupd8team/atom
+	sudo apt update
+	sudo apt install -y atom
     fi
-
 
     # Install packages
     apm_install() {
