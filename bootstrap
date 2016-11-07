@@ -25,8 +25,9 @@ fail () {
 }
 
 setup_gitconfig () {
-  if [ "$(uname -s)" == "Darwin" ]
-  then
+  if [ "$(uname -s)" == "Darwin" ]; then
+    GITFILE=gitconfig.symlink
+  elif [ "$(uname -s)" == "Linux" ]; then
     GITFILE=gitconfig.symlink
   fi
 
@@ -45,7 +46,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES"/git/$GITFILE.example > "$DOTFILES"/git/$GITFILE
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES"/apps/git/$GITFILE.example > "$DOTFILES"/apps/git/$GITFILE
 
     success 'gitconfig'
   fi
