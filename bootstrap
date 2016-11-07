@@ -210,19 +210,20 @@ vim_symlinks() {
 
 sublime_symlinks() {
     # Install Sublime Text 3 symlinks
-    info "creating sublime text 3 symlinks"
+    if [ "$(uname -s)" == "Darwin" ]; then
+        info "creating sublime text 3 symlinks"
     
-    local overwrite_all=false backup_all=false skip_all=false
+        local overwrite_all=false backup_all=false skip_all=false
 
-    SUBLIME="$HOME/Library/Application Support/Sublime Text 3"
-    if [ ! -d "$SUBLIME/Packages/User" ]; then
-        mkdir -p "$SUBLIME/Packages/User"
+        SUBLIME="$HOME/Library/Application Support/Sublime Text 3"
+        if [ ! -d "$SUBLIME/Packages/User" ]; then
+            mkdir -p "$SUBLIME/Packages/User"
+        fi
+        for file in $DOTFILES/apps/sublimetext3/*settings; do
+            target="$SUBLIME"/Packages/User/$( basename "$file" )
+            link_file "$file" "$target"
+        done
     fi
-
-    for file in $DOTFILES/apps/sublimetext3/*settings; do
-        target="$SUBLIME"/Packages/User/$( basename "$file" )
-        link_file "$file" "$target"
-    done
 }
 
 
