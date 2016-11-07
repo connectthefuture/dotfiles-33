@@ -1,4 +1,5 @@
 # Color ouput on OS X
+alias tree="tree -C"
 if [ `uname` == "Darwin" ]; then
   alias ll="ls -alhG"
 elif [ `uname` == "Linux" ]; then
